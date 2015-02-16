@@ -8,36 +8,37 @@
 
 ##################### HOMEBREW #####################
 
-#brew tap caskroom/cask
-#brew_install_or_upgrade 'brew-cask'
-#brew_install_or_upgrade 'mackup' # backup mac config
-#brew_install_or_upgrade 'tig'
-#brew_install_or_upgrade 'git-flow'
-#brew_install_or_upgrade 'htop'
-#brew_install_or_upgrade 'phantomjs'
-#brew_install_or_upgrade 'python'
-#brew_install_or_upgrade 'fasd'
-#brew_install_or_upgrade 'jq' # command-line JSON processor
-#brew_install_or_upgrade 'youtube-dl'
-#brew_install_or_upgrade 'terminal-notifier'
-#brew_install_or_upgrade 'lynx'
-#brew_install_or_upgrade 'zsh'
-#brew_install_or_upgrade 'mongodb'
+brew tap caskroom/cask
+brew_install_or_upgrade 'brew-cask'
+brew_install_or_upgrade 'mackup' # backup mac config
+brew_install_or_upgrade 'tig'
+brew_install_or_upgrade 'git-flow'
+brew_install_or_upgrade 'htop'
+brew_install_or_upgrade 'phantomjs'
+brew_install_or_upgrade 'python'
+brew_install_or_upgrade 'fasd'
+brew_install_or_upgrade 'jq' # command-line JSON processor
+brew_install_or_upgrade 'youtube-dl'
+brew_install_or_upgrade 'terminal-notifier'
+brew_install_or_upgrade 'lynx'
+brew_install_or_upgrade 'zsh'
+brew_install_or_upgrade 'mongodb'
+brew_install_or_upgrade 'cmake' # for youcomleteme
 
 ##################### CASKS ########################
 
 # ui improvements
-#brew cask install bartender
-#brew cask install istat-menus
-#brew cask install flux
+brew cask install bartender
+brew cask install istat-menus
+brew cask install flux
 
 # productivity
-#brew cask install karabiner
-#brew cask install caffeine
-#brew cask install path-finder
-#brew cask install hazel
-#brew cask install appcleaner
-#brew cask install bettertouchtool
+brew cask install karabiner
+brew cask install caffeine
+brew cask install path-finder
+brew cask install hazel
+brew cask install appcleaner
+brew cask install bettertouchtool
 brew cask install alfred
 brew cask install airmail
 brew cask install dropbox
@@ -59,7 +60,6 @@ brew cask install spotify
 brew cask install transmission
 
 # web development
-#curl -L http://install.ohmyz.sh | sh
 brew cask install iterm2
 brew cask install atom
 brew cask install virtualbox
@@ -81,8 +81,8 @@ brew cask install slack
 brew cask install backblaze
 
 #install personal dotfiles
-#git clone https://github.com/jumichot/dotfiles.git ~/.dotfiles
-#rcup rcrc && rcup
+git clone https://github.com/jumichot/dotfiles.git ~/.dotfiles
+rcup rcrc && rcup
 
 # install VIM Vundle plugin
 if [[ ! -e ~/.vim/bundle/vundle/.git ]]
@@ -96,18 +96,18 @@ gem_install_or_update 'genghisapp'
 gem_install_or_update 'boom' # http://zachholman.com/boom/
 
 
+############## Find how to do it #######################
+# launch .osx
+# installer les fonts dans le dossier init : sauce code medium bold 14pt
+
+############## post install #######################
+
 # install font : sauce code powerline
-# setup iterm 256 mode
-# faire marcher alfred, ajouter le path faire les brew cask
-# se connecter a dashlane
-# se connceter a dropbox
-# se connecter a evernote
-# hot corner mission control en haut a gauche 
-# sens naturel du trackpad
-# osx for hacker
-# maj become ctrl
+# alfred ajouter le path faire les brew cask
+# se connecter a dashlane, dropbox, evernote, rescue time, atext (dashlane licence), bartender (dashlane licence), fantastical (special code 2 step auth dans dashlane)
+# keyboard pref maj become ctrl
 # karabiner pour ctrl envoie escape et key repeat
-# screenshot sharing with dropbox
+# activer screenshot sharing with dropbox
 # better touch tool, atext, dashlane : startup on login
-# better touch tool : window snapping shortcut
-# login to rescure time
+# better touch tool : window snapping, shortcut windows manip, shortcut media
+# remettre les bip pour le changement de son dans les pref system
