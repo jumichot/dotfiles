@@ -1,0 +1,25 @@
+[push]
+	default = simple
+[user]
+	name = julien michot
+	email = ju.michot@gmail.com
+[core]
+	editor = vim
+	excludesfile = /Users/ju/.gitignore_global
+[merge]
+	tool = vimdiff
+[color]
+	ui = true
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[alias]
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	churn = "!f() { git log --all -M -C --name-only --format='format:' \"$@\" | sort | grep -v '^$' | uniq -c | sort | awk 'BEGIN {print \"count\tfile\"} {print $1 \"\t\" $2}' | sort -g; }; f"
+	trash = !mkdir -p .trash && git ls-files --others --exclude-standard | xargs mv -f -t .trash
+[status]
+	showUntrackedFiles = all
+[diff]
+	wordRegex = .
+[rerere]
+	enabled = true

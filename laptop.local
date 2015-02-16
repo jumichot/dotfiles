@@ -1,0 +1,113 @@
+#!/bin/sh
+
+# Install laptop
+
+# curl --remote-name https://raw.githubusercontent.com/thoughtbot/laptop/master/mac
+# less mac
+# sh mac 2>&1 | tee ~/laptop.log
+
+##################### HOMEBREW #####################
+
+#brew tap caskroom/cask
+#brew_install_or_upgrade 'brew-cask'
+#brew_install_or_upgrade 'mackup' # backup mac config
+#brew_install_or_upgrade 'tig'
+#brew_install_or_upgrade 'git-flow'
+#brew_install_or_upgrade 'htop'
+#brew_install_or_upgrade 'phantomjs'
+#brew_install_or_upgrade 'python'
+#brew_install_or_upgrade 'fasd'
+#brew_install_or_upgrade 'jq' # command-line JSON processor
+#brew_install_or_upgrade 'youtube-dl'
+#brew_install_or_upgrade 'terminal-notifier'
+#brew_install_or_upgrade 'lynx'
+#brew_install_or_upgrade 'zsh'
+#brew_install_or_upgrade 'mongodb'
+
+##################### CASKS ########################
+
+# ui improvements
+#brew cask install bartender
+#brew cask install istat-menus
+#brew cask install flux
+
+# productivity
+#brew cask install karabiner
+#brew cask install caffeine
+#brew cask install path-finder
+#brew cask install hazel
+#brew cask install appcleaner
+#brew cask install bettertouchtool
+brew cask install alfred
+brew cask install airmail
+brew cask install dropbox
+brew cask install evernote
+brew cask install libreoffice
+brew cask install fantastical
+brew cask install mindnode-pro
+brew cask install freemind
+brew cask install contexts
+brew cask install atext
+brew cask install clipmenu
+brew cask install hocus-focus
+brew cask install rescuetime
+brew cask install dashlane
+
+# entertainment
+brew cask install vlc
+brew cask install spotify
+brew cask install transmission
+
+# web development
+#curl -L http://install.ohmyz.sh | sh
+brew cask install iterm2
+brew cask install atom
+brew cask install virtualbox
+brew cask install gitx-rowanj
+brew cask install google-chrome
+brew cask install firefox
+brew cask install ccmenu
+brew cask install dash
+brew cask install livereload
+brew cask install imageoptim
+brew cask install pgadmin3
+brew cask install github
+#brew cask install charles
+
+# communications
+brew cask install hipchat
+brew cask install skype
+brew cask install slack
+brew cask install backblaze
+
+#install personal dotfiles
+#git clone https://github.com/jumichot/dotfiles.git ~/.dotfiles
+#rcup rcrc && rcup
+
+# install VIM Vundle plugin
+if [[ ! -e ~/.vim/bundle/vundle/.git ]]
+then
+  git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+  vim +BundleInstall +qall
+fi
+
+# install system wide gems
+gem_install_or_update 'genghisapp'
+gem_install_or_update 'boom' # http://zachholman.com/boom/
+
+
+# install font : sauce code powerline
+# setup iterm 256 mode
+# faire marcher alfred, ajouter le path faire les brew cask
+# se connecter a dashlane
+# se connceter a dropbox
+# se connecter a evernote
+# hot corner mission control en haut a gauche 
+# sens naturel du trackpad
+# osx for hacker
+# maj become ctrl
+# karabiner pour ctrl envoie escape et key repeat
+# screenshot sharing with dropbox
+# better touch tool, atext, dashlane : startup on login
+# better touch tool : window snapping shortcut
+# login to rescure time
