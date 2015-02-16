@@ -40,7 +40,6 @@ brew cask install hazel
 brew cask install appcleaner
 brew cask install bettertouchtool
 brew cask install alfred
-brew cask install airmail
 brew cask install dropbox
 brew cask install evernote
 brew cask install libreoffice
@@ -108,6 +107,7 @@ sudo chown `id -u` /data/db
 
 ############## Find how to do it #######################
 # launch .osx
+# mkdir Inbox
 # installer les fonts dans le dossier init : sauce code medium bold 14pt
 # installer les preferences iterms (via export dans init)
 
@@ -124,6 +124,14 @@ sudo chown `id -u` /data/db
 # setup istat + bartender
 # pb nokogiri : xcode-select --install
 # iterm shit + commande + t : tabs in fullscreen
+# chrome menu > warn before quitting
+# install apps in app store
 
 # TODO
 # karabiner pour ctrl envoie escape et key repeat, et le ~
+# hazzel
+# setup inbox
+# youcompleteme
+# fast ctrlp
+# faire anki shortcut
+# vim airline
