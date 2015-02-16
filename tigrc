@@ -1,0 +1,15 @@
+# guides : http://jonas.nitro.dk/tig/tigrc.5.html
+
+set main-view = id date:relative author:abbreviated commit-title:graph=yes,refs=yes
+
+set refresh-mode        = periodic   # Enum: manual, auto, after-command, periodic
+set refresh-interval    = 1          # Interval in seconds between refreshes
+
+# Delete files in status view (useful for untracked files)
+bind status D !rm -v %(file)
+# Amend last commit with A
+bind status A !git commit --amend
+# Create and checkout a new branch; specify custom prompt
+bind main B !git checkout -b "%(prompt Enter new branch name: )"
+# Display history for specific file in log view
+bind log F !tig --follow --all -p "%(prompt Enter file name: )"
