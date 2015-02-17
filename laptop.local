@@ -93,7 +93,7 @@ fi
 # install system wide gems
 gem_install_or_update 'genghisapp'
 gem_install_or_update 'boom' # http://zachholman.com/boom/
-
+gem_install_or_update 'tmuxinator'
 
 
 ############## install #######################
@@ -135,3 +135,7 @@ sudo chown `id -u` /data/db
 # fast ctrlp
 # faire anki shortcut
 # vim airline
+# install prezto
+# se co blackbaze
+# gp git push
+# tmux
