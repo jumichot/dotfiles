@@ -1,0 +1,6 @@
+gem: --no-ri --no-rdoc
+verbose: true
+backtrace: true
+sources:
+- http://gems.rubyforge.org/
+- http://rubygems.org/
