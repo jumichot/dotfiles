@@ -32,6 +32,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'mxw/vim-jsx'
+Plugin 'bling/vim-airline'
 
 call vundle#end()
 filetype plugin indent on
@@ -57,7 +58,9 @@ set mouse=a                     " enable mouse
 
 set t_Co=256                    " 256 colors
 set background=dark
-color mustang
+set background=dark
+colorscheme solarized
+" color mustang
 " color base16-3024
 
 " ================ Search Settings  =================
@@ -236,3 +239,5 @@ let g:rspec_runner = "os_x_iterm"
 let g:rspec_command  = "!be rspec --tag ~@js {spec}"
 " syntax highlting for jsx on .js files
 let g:jsx_ext_required = 0
+
+let g:airline_powerline_fonts = 1
