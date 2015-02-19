@@ -157,7 +157,8 @@ nmap <silent> // :nohlsearch<CR>
 nmap <leader>ru :Rubocop
 nmap <leader>f :Ag 
 nmap <leader>ba :Gblame<CR>
-nmap <leader>q :qa!
+nmap <leader>q :q!<CR>
+nmap <leader>Q :qa!<CR>
 
 " =========== Tabs and window navigation ===========
 
