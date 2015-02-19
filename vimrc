@@ -155,7 +155,7 @@ imap <right> <nop>
 " remove search hilighting
 nmap <silent> // :nohlsearch<CR>
 nmap <leader>ru :Rubocop
-nmap <leader>f :Ag
+nmap <leader>f :Ag 
 nmap <leader>ba :Gblame<CR>
 nmap <leader>q :qa!
 
