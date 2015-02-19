@@ -168,13 +168,12 @@ map <C-L> <C-W>l<C-W>_
 map <C-H> <C-W>h<C-W>_
 
 " tabs navigation
-nnoremap th  :tabfirst<CR>
-nnoremap tk  :tabnext<CR>
-nnoremap tj  :tabprev<CR>
-nnoremap tl  :tablast<CR>
-nnoremap tt  :tabedit<CR>
-nnoremap tm  :tabm<Space>
-nnoremap td  :tabclose<CR>
+nnoremap th  :bfirst<CR>
+nnoremap tk  :bn<CR>
+nnoremap tj  :bp<CR>
+nnoremap tl  :blast<CR>
+nnoremap tt  :enew<CR>
+nnoremap td  :bd<CR>
 
 set splitright
 
@@ -242,3 +241,5 @@ let g:rspec_command  = "!be rspec --tag ~@js {spec}"
 let g:jsx_ext_required = 0
 
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
