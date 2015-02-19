@@ -7,9 +7,15 @@ set refresh-interval    = 1          # Interval in seconds between refreshes
 
 # Delete files in status view (useful for untracked files)
 bind status D !rm -v %(file)
+
 # Amend last commit with A
 bind status A !git commit --amend
+
+# Git push
+bind status P !git push
+
 # Create and checkout a new branch; specify custom prompt
 bind main B !git checkout -b "%(prompt Enter new branch name: )"
+
 # Display history for specific file in log view
 bind log F !tig --follow --all -p "%(prompt Enter file name: )"
