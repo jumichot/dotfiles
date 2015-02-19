@@ -1,10 +1,13 @@
 #!/bin/sh
 
-# Install laptop
+# install xcode additional requirements
+xcode-select --install
 
+############## Install laptop #######################
 # curl --remote-name https://raw.githubusercontent.com/thoughtbot/laptop/master/mac
 # less mac
 # sh mac 2>&1 | tee ~/laptop.log
+
 
 ##################### HOMEBREW #####################
 
@@ -15,7 +18,7 @@ brew_install_or_upgrade 'tig'
 brew_install_or_upgrade 'git-flow'
 brew_install_or_upgrade 'htop'
 brew_install_or_upgrade 'phantomjs'
-brew_install_or_upgrade 'python'
+# brew_install_or_upgrade 'python' #problem with vim ycm
 brew_install_or_upgrade 'fasd'
 brew_install_or_upgrade 'jq' # command-line JSON processor
 brew_install_or_upgrade 'youtube-dl'
@@ -94,12 +97,11 @@ fi
 gem_install_or_update 'genghisapp'
 gem_install_or_update 'boom' # http://zachholman.com/boom/
 gem_install_or_update 'tmuxinator'
+gem_install_or_update 'rubocop'
 
 
 ############## install #######################
 
-# install xcode additional requirements
-xcode-select --install
 
 # fix mongod
 sudo mkdir -p /data/db/
@@ -109,33 +111,36 @@ sudo chown `id -u` /data/db
 # launch .osx
 # mkdir Inbox
 # installer les fonts dans le dossier init : sauce code medium bold 14pt
-# installer les preferences iterms (via export dans init)
+# sauvegarder les preferences dans le dossier dotfiles : script import et export
+# prefs iterms
+# prefs bartender
+# prefs karabiner
+# prefs istats
+# prefs hazel
 
 ##### MANUALS INSTALL ######
 # alfred ajouter le path faire les brew cask
 # se connecter a dashlane, dropbox, evernote, rescue time, atext (dashlane licence), bartender (dashlane licence),
-# se connecter a fantastical (special code 2 step auth dans dashlane), istat5 (dashlane)
+# se connecter a fantastical (special code 2 step auth dans dashlane), istat5 (dashlane), flux
 # keyboard pref maj become ctrl
 # activer screenshot sharing with dropbox
 # better touch tool, atext, dashlane : startup on login
-# better touch tool : window snapping, shortcut windows manip, shortcut media
+# better touch tool : window snapping, shortcut windows manip, shortcut media (f6, f7, f8)
 # remettre les bip pour le changement de son dans les pref system
-# setup calendar dans ical
-# setup istat + bartender
-# pb nokogiri : xcode-select --install
+# setup calendar dans ical avec comptes googles
+# setup istat
+# setup bartender
 # iterm shit + commande + t : tabs in fullscreen
 # chrome menu > warn before quitting
 # install apps in app store
+# install youcomplete me : brew rm
+# install backblaze
 
 # TODO
-# karabiner pour ctrl envoie escape et key repeat, et le ~
 # hazzel
 # setup inbox
-# youcompleteme
 # fast ctrlp
 # faire anki shortcut
-# vim airline
-# install prezto
-# se co blackbaze
-# gp git push
-# tmux
+# mettre config zsh dans dotfiles
+# faire script install, laptop, laptop.local, then osx (need Inbox folder)
+# toggle hidden file in finder : do script
