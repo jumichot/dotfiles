@@ -19,9 +19,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'mustache/vim-mustache-handlebars'
-" Colors
-Plugin 'nanotech/jellybeans.vim'
 Plugin 'vim-ruby/vim-ruby'
 " nelstrom's plugin depends on kana's
 Plugin 'kana/vim-textobj-user'
@@ -58,10 +55,7 @@ set mouse=a                     " enable mouse
 
 set t_Co=256                    " 256 colors
 set background=dark
-set background=dark
 colorscheme solarized
-" color mustang
-" color base16-3024
 
 " ================ Search Settings  =================
 
@@ -128,19 +122,19 @@ set sidescrolloff=15
 set sidescroll=1
 
 " ===================================================
-" ==================== mine =========================
+" ==================== MINE =========================
 " ===================================================
 
 " ============= Leader key and escape key ===========
 
 map <space> <leader>
 map <space><space> <leader><leader>
-:imap jk <esc>:w<cr>
+imap jk <esc>:w<cr>
 inoremap jj <esc>
 
 " =============== General mapings ===================
 
-" Disable arrow keys (hardcore)
+" Disable arrow keys, no need (hardcore mode)
 map  <up>    <nop>
 imap <up>    <nop>
 map  <down>  <nop>
