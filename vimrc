@@ -174,6 +174,7 @@ nnoremap tj  :bp<CR>
 nnoremap tl  :blast<CR>
 nnoremap tt  :enew<CR>
 nnoremap td  :bd<CR>
+nnoremap ta  :1,1000bd<CR>
 
 set splitright
 
@@ -210,10 +211,10 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-" =================== POWERLINE =================
-
-"source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
-"highlight Pmenu ctermfg=1 ctermbg=2
+" =================== AIRLINE =================
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 " fix multi paste
 xnoremap p pgvy
@@ -240,6 +241,3 @@ let g:rspec_command  = "!be rspec --tag ~@js {spec}"
 " syntax highlting for jsx on .js files
 let g:jsx_ext_required = 0
 
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
