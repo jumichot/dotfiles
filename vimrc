@@ -30,6 +30,10 @@ Plugin 'honza/vim-snippets'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'mxw/vim-jsx'
 Plugin 'bling/vim-airline'
+Plugin 'moll/vim-node'
+Plugin 'myhere/vim-nodejs-complete'
+Plugin 'pangloss/vim-javascript'
+Plugin 'wookiehangover/jshint.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -151,7 +155,6 @@ nmap <silent> // :nohlsearch<CR>
 nmap <leader>ru :Rubocop
 nmap <leader>f :Ag 
 nmap <leader>ba :Gblame<CR>
-nmap <leader>q :q!<CR>
 nmap <leader>Q :qa!<CR>
 
 " =========== Tabs and window navigation ===========
@@ -161,13 +164,13 @@ map <C-K> <C-W>k<C-W>_
 map <C-L> <C-W>l<C-W>_
 map <C-H> <C-W>h<C-W>_
 
-" tabs navigation
 nnoremap th  :bfirst<CR>
 nnoremap tk  :bn<CR>
 nnoremap tj  :bp<CR>
 nnoremap tl  :blast<CR>
 nnoremap tt  :enew<CR>
 nnoremap td  :bd<CR>
+nmap <leader>q :bd<CR>
 nnoremap ta  :1,1000bd<CR>
 
 set splitright
@@ -235,3 +238,5 @@ let g:rspec_command  = "!be rspec --tag ~@js {spec}"
 " syntax highlting for jsx on .js files
 let g:jsx_ext_required = 0
 
+map <Leader>re :source ~/.vimrc<CR>
+map <Leader>= ggVG=
