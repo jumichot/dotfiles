@@ -28,6 +28,7 @@ brew_install_or_upgrade 'zsh'
 brew_install_or_upgrade 'mongodb'
 brew_install_or_upgrade 'cmake' # for youcomleteme
 brew_install_or_upgrade 'mc' # midnight commander file explorer
+brew_install_or_upgrade 'emacs' # midnight commander file explorer
 
 ##################### CASKS ########################
 
