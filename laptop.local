@@ -57,6 +57,7 @@ brew cask install clipmenu
 brew cask install hocus-focus
 brew cask install rescuetime
 brew cask install dashlane
+brew cask install doxie
 
 # entertainment
 brew cask install vlc
