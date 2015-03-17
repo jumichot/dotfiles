@@ -28,12 +28,12 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'ngmy/vim-rubocop'
-Plugin 'mxw/vim-jsx'
+" Plugin 'mxw/vim-jsx'
 Plugin 'bling/vim-airline'
 Plugin 'moll/vim-node'
 Plugin 'myhere/vim-nodejs-complete'
 Plugin 'pangloss/vim-javascript'
-Plugin 'wookiehangover/jshint.vim'
+" Plugin 'wookiehangover/jshint.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -227,7 +227,7 @@ let g:syntastic_scss_checkers = ['scss_lint']
 map Q gq
 " No Help, please
 nmap <F1> <Esc>
-nnoremap <leader>json :%!jq .<CR>
+" nnoremap <leader>json :%!jq .<CR>
 " RSpec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
@@ -236,7 +236,7 @@ map <Leader>a :call RunAllSpecs()<CR>
 let g:rspec_runner = "os_x_iterm"
 let g:rspec_command  = "!be rspec --tag ~@js {spec}"
 " syntax highlting for jsx on .js files
-let g:jsx_ext_required = 0
+" let g:jsx_ext_required = 0
 
 map <Leader>re :source ~/.vimrc<CR>
 map <Leader>= ggVG=
