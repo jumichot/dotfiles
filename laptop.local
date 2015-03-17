@@ -58,6 +58,8 @@ brew cask install hocus-focus
 brew cask install rescuetime
 brew cask install dashlane
 brew cask install doxie
+brew cask install eye-fi
+brew install jrnl
 
 # entertainment
 brew cask install vlc
@@ -77,6 +79,8 @@ brew cask install livereload
 brew cask install imageoptim
 brew cask install pgadmin3
 brew cask install github
+brew cask install paw
+brew cask install toggldesktop
 #brew cask install charles
 #brew cask install xquartz
 #brew cask install wireshark
