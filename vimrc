@@ -34,6 +34,12 @@ Plugin 'moll/vim-node'
 Plugin 'myhere/vim-nodejs-complete'
 Plugin 'pangloss/vim-javascript'
 " Plugin 'wookiehangover/jshint.vim'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'Shougo/unite.vim'
+Plugin 'kshenoy/vim-signature'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/vimshell.vim'
+Plugin 'rizzatti/dash.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -185,6 +191,7 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let g:NERDTreeWinSize = 35
 nmap <leader>n :NERDTreeToggle<CR>
+map <Leader>m :NERDTree<CR>
 " Open the project tree and expose current file in the nerdtree
 nnoremap <silent> <leader>cf :NERDTreeFind<CR>:vertical res 30<CR>
 let g:undotree_SetFocusWhenToggle=1 " if undotree is opened, it is likely one wants to interact with it.
@@ -240,3 +247,6 @@ let g:rspec_command  = "!be rspec --tag ~@js {spec}"
 
 map <Leader>re :source ~/.vimrc<CR>
 map <Leader>= ggVG=
+map <Leader>r :e!<CR>
+" add semi colon at the end of the line
+nnoremap <leader>; m`A;<Esc>``
