@@ -3,4 +3,23 @@ username = Julien Michot <ju.michot@gmail.com>
 
 [extensions]
 color =
-rebase =
+rebase=
+purge=
+record=
+strip=
+pager=
+histedit=
+mq=
+
+[pager]
+pager= LESS="FRX" less
+attend = d, diff, xdiff, log, help, status
+
+[diff]
+git=1
+nodates=1
+
+[alias]
+log=log -G
+xdiff = diff -wbB
+d = xdiffebase =
