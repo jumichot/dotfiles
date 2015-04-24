@@ -40,6 +40,11 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'rizzatti/dash.vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'burnettk/vim-angular'
+Plugin 'rstacruz/sparkup'
+Plugin 'parkr/vim-jekyll'
 
 call vundle#end()
 filetype plugin indent on
@@ -250,3 +255,11 @@ map <Leader>= ggVG=
 map <Leader>r :e!<CR>
 " add semi colon at the end of the line
 nnoremap <leader>; m`A;<Esc>``
+
+set colorcolumn=120
+autocmd FileType gitcommit setlocal spell
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufRead,BufNewFile *.markdown setlocal spell
+let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_frontmatter=1
+
