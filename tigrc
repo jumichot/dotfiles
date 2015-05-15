@@ -6,7 +6,7 @@ set refresh-mode        = periodic   # Enum: manual, auto, after-command, period
 set refresh-interval    = 1          # Interval in seconds between refreshes
 
 # Delete files in status view (useful for untracked files)
-bind status D !rm -v %(file)
+bind status D !rm -vf %(file)
 
 # Amend last commit with A
 bind status A !git commit --amend
