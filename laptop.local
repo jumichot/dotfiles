@@ -15,6 +15,7 @@ brew tap caskroom/cask
 brew_install_or_upgrade 'brew-cask'
 brew_install_or_upgrade 'mackup' # backup mac config
 brew_install_or_upgrade 'tig'
+brew_install_or_upgrade 'hub'
 brew_install_or_upgrade 'git-flow'
 brew_install_or_upgrade 'htop'
 brew_install_or_upgrade 'phantomjs'
