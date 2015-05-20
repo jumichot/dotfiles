@@ -3,7 +3,6 @@
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'kien/ctrlp.vim'
@@ -45,8 +44,11 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'burnettk/vim-angular'
 Plugin 'rstacruz/sparkup'
 Plugin 'parkr/vim-jekyll'
+" Plugin 'Townk/vim-autoclose'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
+
 filetype plugin indent on
 
 " ================ General Config ====================
@@ -60,12 +62,16 @@ set showmode                    " Show current mode down the bottom
 set visualbell                  " No sounds
 set autoread                    " Reload files changed outside vim
 set hidden                      " Better buffers
+set cursorline
 set laststatus=2                " Always display the status line
 set encoding=utf-8              " required by powerline for display special caracters
 set ruler                       " Always show current position
 set clipboard=unnamed           " clipboard system
 set mouse=a                     " enable mouse
-
+" set lazyredraw                  " redraw only when we need to
+set showmatch                   " highlight matching [{()}]
+" nnoremap j gj
+" nnoremap k gk
 " =================== Theming =======================
 
 set t_Co=256                    " 256 colors
@@ -109,10 +115,14 @@ set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
 
 " ================ Folds ============================
+set foldenable          " enable folding
+set foldlevelstart=10   " open most folds by default
+set foldnestmax=10      " 10 nested fold max
+" nnoremap <space> za   " space open/closes folds
 
-set foldmethod=manual   "fold based on indent
-set foldnestmax=3       "deepest fold is 3 levels
-set nofoldenable        "dont fold by default
+" set nofoldenable        "dont fold by default
+" set foldmethod=manual   "fold based on indent
+" set foldnestmax=3       "deepest fold is 3 levels
 
 " ================ Completion =======================
 
@@ -144,7 +154,7 @@ set sidescroll=1
 
 map <space> <leader>
 map <space><space> <leader><leader>
-imap jk <esc>:w<cr>
+inoremap jk <esc>:w<cr>
 inoremap jj <esc>
 
 " =============== General mapings ===================
@@ -163,8 +173,10 @@ imap <right> <nop>
 :nmap \o :set paste!<CR>
 " remove search hilighting
 nmap <silent> // :nohlsearch<CR>
-nmap <leader>ru :Rubocop
+nmap <leader>ru :RuboCop<CR>
 nmap <leader>f :Ag 
+nmap <leader>fs :Ag 
+nmap <leader>fu :Ag -Q "
 nmap <leader>ba :Gblame<CR>
 nmap <leader>Q :qa!<CR>
 
@@ -204,8 +216,11 @@ let g:undotree_SetFocusWhenToggle=1 " if undotree is opened, it is likely one wa
 " ================== CtrlP with Ag =================
 
 if executable("ag")
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  " set grepprg=ag\ --nogroup\ --nocolor
+  " let g:ctrlp_match_window = 'bottom,order:ttb'
+  let g:ctrlp_switch_buffer = 0
+  let g:ctrlp_working_path_mode = 0
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 endif
 
 " ====================== TMUX  ====================
@@ -246,7 +261,8 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 let g:rspec_runner = "os_x_iterm"
-let g:rspec_command  = "!be rspec --tag ~@js {spec}"
+let g:rspec_command  = "!bundle exec rspec --tag ~@js {spec}"
+" let g:rspec_command  = "!zeus rspec --tag ~@js {spec}"
 " syntax highlting for jsx on .js files
 " let g:jsx_ext_required = 0
 
@@ -262,4 +278,10 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufRead,BufNewFile *.markdown setlocal spell
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
+" nnoremap <leader>gv `[v`] " highlight last inserted text
 
+au FileType go inoremap jk <esc>:GoImports<cr>:w<cr>
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
