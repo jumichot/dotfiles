@@ -31,6 +31,7 @@ brew_install_or_upgrade 'cmake' # for youcomleteme
 brew_install_or_upgrade 'mc' # midnight commander file explorer
 brew_install_or_upgrade 'emacs'
 brew_install_or_upgrade 'graphviz'
+brew_install_or_upgrade 'jsonpp'
 
 ##################### CASKS ########################
 
