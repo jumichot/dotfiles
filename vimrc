@@ -19,7 +19,6 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'vim-ruby/vim-ruby'
-" nelstrom's plugin depends on kana's
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'tpope/vim-commentary'
@@ -27,7 +26,6 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'ngmy/vim-rubocop'
-" Plugin 'mxw/vim-jsx'
 Plugin 'bling/vim-airline'
 Plugin 'moll/vim-node'
 Plugin 'myhere/vim-nodejs-complete'
@@ -285,4 +283,5 @@ au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
+
 map <Leader>, :CtrlPBuffer<cr>
