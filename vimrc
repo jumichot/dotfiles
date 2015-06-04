@@ -285,3 +285,4 @@ au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 
 map <Leader>, :CtrlPBuffer<cr>
+nmap <Leader>cl :let @*=expand("%:p")<CR>
