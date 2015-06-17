@@ -185,15 +185,21 @@ map <C-K> <C-W>k<C-W>_
 map <C-L> <C-W>l<C-W>_
 map <C-H> <C-W>h<C-W>_
 
-nnoremap th  :bfirst<CR>
-nnoremap tk  :bn<CR>
-nnoremap tj  :bp<CR>
-nnoremap tl  :blast<CR>
-nnoremap tt  :enew<CR>
-nnoremap td  :bd<CR>
-nmap <leader>q :bd<CR>
-nnoremap ta  :1,1000bd<CR>
+nnoremap th  :tabfirst<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tk  :tabnext<CR>
+nnoremap tj  :tabprev<CR>
+nnoremap tt  :tabedit<CR>
+nnoremap tm  :tabm<Space>
 
+" nnoremap th  :bfirst<CR>
+" nnoremap tl  :blast<CR>
+" nnoremap tk  :bn<CR>
+" nnoremap tj  :bp<CR>
+" nnoremap td  :bd<CR>
+
+nmap <leader>q :bd!<CR>
+nnoremap ta  :1,1000bd<CR>
 set splitright
 
 " ===================================================
@@ -284,5 +290,5 @@ au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 
-map <Leader>, :CtrlPBuffer<cr>
+map <Leader>p :CtrlPBuffer<cr>
 nmap <Leader>cl :let @*=expand("%:p")<CR>
