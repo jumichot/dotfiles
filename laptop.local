@@ -30,6 +30,8 @@ brew_install_or_upgrade 'graphviz'
 brew_install_or_upgrade 'jsonpp'
 brew_install_or_upgrade 'jrnl'
 brew_install_or_upgrade 'thefuck'
+brew_install_or_upgrade 'pick'
+brew_install_or_upgrade 'fpp'
 # brew_install_or_upgrade 'lynx'
 # brew_install_or_upgrade 'mackup' # backup mac config
 # brew_install_or_upgrade 'python' #problem with vim ycm
