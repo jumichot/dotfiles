@@ -16,6 +16,7 @@ bind status P !git push
 
 # Create and checkout a new branch; specify custom prompt
 bind main B !git checkout -b "%(prompt Enter new branch name: )"
+bind main Y !@sh -c "echo %(commit) | pbcopy"
 
 # Display history for specific file in log view
 bind log F !tig --follow --all -p "%(prompt Enter file name: )"
