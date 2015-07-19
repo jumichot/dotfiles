@@ -44,6 +44,9 @@ Plugin 'rstacruz/sparkup'
 Plugin 'parkr/vim-jekyll'
 " Plugin 'Townk/vim-autoclose'
 Plugin 'fatih/vim-go'
+Plugin 'junegunn/vim-pseudocl'
+Plugin 'junegunn/vim-oblique'
+Plugin 'elixir-lang/vim-elixir'
 
 call vundle#end()
 
@@ -136,6 +139,8 @@ set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
+set wildignore+=*/node_modules/*
+set wildignore+=*/bower_components/*
 set completeopt-=preview
 
 " ================ Scrolling ========================
@@ -173,7 +178,6 @@ imap <right> <nop>
 nmap <silent> // :nohlsearch<CR>
 nmap <leader>ru :RuboCop<CR>
 nmap <leader>f :Ag 
-nmap <leader>fs :Ag 
 nmap <leader>fu :Ag -Q "
 nmap <leader>ba :Gblame<CR>
 nmap <leader>Q :qa!<CR>
@@ -191,6 +195,7 @@ nnoremap tk  :tabnext<CR>
 nnoremap tj  :tabprev<CR>
 nnoremap tt  :tabedit<CR>
 nnoremap tm  :tabm<Space>
+nnoremap td  :bd!<Space>
 
 " nnoremap th  :bfirst<CR>
 " nnoremap tl  :blast<CR>
@@ -198,7 +203,7 @@ nnoremap tm  :tabm<Space>
 " nnoremap tj  :bp<CR>
 " nnoremap td  :bd<CR>
 
-nmap <leader>q :bd!<CR>
+nmap <leader>q :q!<CR>
 nnoremap ta  :1,1000bd<CR>
 set splitright
 
@@ -273,8 +278,10 @@ let g:rspec_command  = "!bundle exec rspec --tag ~@js {spec}"
 map <Leader>re :source ~/.vimrc<CR>
 map <Leader>= ggVG=
 map <Leader>r :e!<CR>
-" add semi colon at the end of the line
+
+" add comma / semicolon at the end of the line
 nnoremap <leader>; m`A;<Esc>``
+nnoremap <Leader>, m`A,<Esc>``
 
 set colorcolumn=120
 autocmd FileType gitcommit setlocal spell
@@ -292,3 +299,22 @@ au FileType go nmap <leader>c <Plug>(go-coverage)
 
 map <Leader>p :CtrlPBuffer<cr>
 nmap <Leader>cl :let @*=expand("%:p")<CR>
+
+let g:oblique#incsearch_highlight_all=1
+" ========================== Search ==================
+set grepprg=ag\ --nogroup\ --nocolor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" ========================= Misc ===================
+" Useful
+nnoremap <Leader>o o<Esc>k
+nnoremap <Leader>O O<Esc>j
+" Comment
+nmap <Leader>c gcc
+vmap <Leader>c gc
+" AutoCorrect typos in Insert Mode
+iabbrev lenght length
+iabbrev heigth height
+iabbrev widht width
+iabbrev fucntion function
+iabbrev funciton function
