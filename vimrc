@@ -30,7 +30,6 @@ Plugin 'bling/vim-airline'
 Plugin 'moll/vim-node'
 Plugin 'myhere/vim-nodejs-complete'
 Plugin 'pangloss/vim-javascript'
-" Plugin 'wookiehangover/jshint.vim'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'kshenoy/vim-signature'
@@ -42,11 +41,11 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'burnettk/vim-angular'
 Plugin 'rstacruz/sparkup'
 Plugin 'parkr/vim-jekyll'
-" Plugin 'Townk/vim-autoclose'
 Plugin 'fatih/vim-go'
 Plugin 'junegunn/vim-pseudocl'
 Plugin 'junegunn/vim-oblique'
 Plugin 'elixir-lang/vim-elixir'
+
 
 call vundle#end()
 
@@ -318,3 +317,4 @@ iabbrev heigth height
 iabbrev widht width
 iabbrev fucntion function
 iabbrev funciton function
+cmap w!! w !sudo tee % >/dev/null
