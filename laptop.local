@@ -74,6 +74,7 @@ brew cask install doxie
 brew cask install eye-fi
 brew cask install xtrafinder
 brew cask install noizio
+brew cask install disk-inventory-x
 
 # entertainment
 brew cask install vlc
@@ -97,6 +98,7 @@ brew cask install github
 brew cask install paw
 brew cask install toggldesktop
 brew cask install sequel-pro
+brew cask install kitematic
 # brew cask install charles
 # brew cask install xquartz
 # brew cask install wireshark

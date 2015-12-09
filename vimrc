@@ -7,7 +7,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-haml'
@@ -16,7 +16,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'kchmck/vim-coffee-script'
+" Plugin 'kchmck/vim-coffee-script'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'kana/vim-textobj-user'
@@ -25,26 +25,27 @@ Plugin 'tpope/vim-commentary'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'ngmy/vim-rubocop'
+" Plugin 'ngmy/vim-rubocop'
 Plugin 'bling/vim-airline'
-Plugin 'moll/vim-node'
-Plugin 'myhere/vim-nodejs-complete'
+" Plugin 'moll/vim-node'
+" Plugin 'myhere/vim-nodejs-complete'
 Plugin 'pangloss/vim-javascript'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'Shougo/unite.vim'
+" Plugin 'marijnh/tern_for_vim'
+" Plugin 'Shougo/unite.vim'
 Plugin 'kshenoy/vim-signature'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Shougo/vimshell.vim'
-Plugin 'rizzatti/dash.vim'
+" Plugin 'Shougo/vimproc.vim'
+" Plugin 'Shougo/vimshell.vim'
+" Plugin 'rizzatti/dash.vim'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'burnettk/vim-angular'
-Plugin 'rstacruz/sparkup'
-Plugin 'parkr/vim-jekyll'
-Plugin 'fatih/vim-go'
+" Plugin 'digitaltoad/vim-jade'
+" Plugin 'burnettk/vim-angular'
+" Plugin 'rstacruz/sparkup'
+" Plugin 'parkr/vim-jekyll'
+" Plugin 'fatih/vim-go'
 Plugin 'junegunn/vim-pseudocl'
 Plugin 'junegunn/vim-oblique'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'mxw/vim-jsx'
 
 
 call vundle#end()
@@ -72,6 +73,8 @@ set mouse=a                     " enable mouse
 set showmatch                   " highlight matching [{()}]
 " nnoremap j gj
 " nnoremap k gk
+set relativenumber
+
 " =================== Theming =======================
 
 set t_Co=256                    " 256 colors
@@ -256,7 +259,7 @@ runtime macros/matchit.vim
 let g:UltiSnipsExpandTrigger="<c-l>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:syntastic_scss_checkers = ['scss_lint']
+" let g:syntastic_scss_checkers = ['scss_lint']
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -318,3 +321,4 @@ iabbrev widht width
 iabbrev fucntion function
 iabbrev funciton function
 cmap w!! w !sudo tee % >/dev/null
+
