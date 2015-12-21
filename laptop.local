@@ -39,6 +39,7 @@ brew_install_or_upgrade 'docker'
 brew_install_or_upgrade 'docker-compose'
 brew_install_or_upgrade 'watchman'
 brew_install_or_upgrade 'git-flow'
+brew_install_or_upgrade 'tree'
 # brew_install_or_upgrade 'lynx'
 # brew_install_or_upgrade 'mackup' # backup mac config
 # brew_install_or_upgrade 'python' #problem with vim ycm
@@ -99,6 +100,7 @@ brew cask install paw
 brew cask install toggldesktop
 brew cask install sequel-pro
 brew cask install kitematic
+brew cask install filezilla
 # brew cask install charles
 # brew cask install xquartz
 # brew cask install wireshark
