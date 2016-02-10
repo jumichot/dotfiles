@@ -7,7 +7,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-" Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-haml'
@@ -23,6 +23,7 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'tpope/vim-commentary'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'justinj/vim-react-snippets'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 " Plugin 'ngmy/vim-rubocop'
@@ -46,6 +47,12 @@ Plugin 'junegunn/vim-pseudocl'
 Plugin 'junegunn/vim-oblique'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'mxw/vim-jsx'
+Plugin 'wavded/vim-stylus'
+Plugin 'mattn/emmet-vim'
+
+Plugin 'kana/vim-operator-user'
+Plugin 'haya14busa/vim-operator-flashy'
+
 
 
 call vundle#end()
@@ -63,7 +70,7 @@ set showmode                    " Show current mode down the bottom
 set visualbell                  " No sounds
 set autoread                    " Reload files changed outside vim
 set hidden                      " Better buffers
-set cursorline
+" set cursorline
 set laststatus=2                " Always display the status line
 set encoding=utf-8              " required by powerline for display special caracters
 set ruler                       " Always show current position
@@ -321,4 +328,14 @@ iabbrev widht width
 iabbrev fucntion function
 iabbrev funciton function
 cmap w!! w !sudo tee % >/dev/null
-
+let g:syntastic_javascript_checkers = ['eslint']
+set timeout           " for mappings
+set timeoutlen=1000   " default value
+set ttimeout          " for key codes
+set ttimeoutlen=10    " unnoticeable small value
+nmap <leader>rr :e config/routes.rb<CR>
+nmap <leader>sc :e db/schema.rb<CR>
+" set shellcmdflag=-ic
+map y <Plug>(operator-flashy)
+nmap Y <Plug>(operator-flashy)$
+nnoremap <leader>wtf oputs "#" * 90<c-m>puts <c-m>puts "#" * 90<esc>

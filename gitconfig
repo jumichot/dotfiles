@@ -31,3 +31,5 @@
 	trustExitCode = true
 [pull]
 	rebase = true
+[github]
+	user = jumichot
