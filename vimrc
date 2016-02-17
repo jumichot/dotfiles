@@ -52,6 +52,7 @@ Plugin 'mattn/emmet-vim'
 
 Plugin 'kana/vim-operator-user'
 Plugin 'haya14busa/vim-operator-flashy'
+Plugin 'lambdatoast/elm.vim'
 
 
 
