@@ -34,85 +34,21 @@ brew_install_or_upgrade 'pick'
 brew_install_or_upgrade 'fpp'
 brew_install_or_upgrade 'ranger'
 brew_install_or_upgrade 'elixir'
-brew_install_or_upgrade 'boot2docker'
-brew_install_or_upgrade 'docker'
-brew_install_or_upgrade 'docker-compose'
 brew_install_or_upgrade 'watchman'
 brew_install_or_upgrade 'git-flow'
 brew_install_or_upgrade 'tree'
+brew_install_or_upgrade 'wget'
+brew_install_or_upgrade 'csvfix'
+brew_install_or_upgrade 'textql'
+brew_install_or_upgrade 'fswatch'
+brew_install_or_upgrade 'diff-so-fancy'
+brew_install_or_upgrade 'mas' #mac appstore cli
+brew tap thoughtbot/formulae
+brew install parity
 # brew_install_or_upgrade 'lynx'
 # brew_install_or_upgrade 'mackup' # backup mac config
 # brew_install_or_upgrade 'python' #problem with vim ycm
 # brew_install_or_upgrade 'mc' # midnight commander file explorer
-##################### CASKS ########################
-
-# ui improvements
-brew cask install bartender
-brew cask install istat-menus
-brew cask install flux
-
-# productivity
-brew cask install karabiner
-brew cask install caffeine
-brew cask install path-finder
-brew cask install hazel
-brew cask install appcleaner
-brew cask install bettertouchtool
-brew cask install alfred
-brew cask install dropbox
-brew cask install evernote
-brew cask install libreoffice
-brew cask install fantastical
-brew cask install mindnode-pro
-brew cask install freemind
-brew cask install contexts
-brew cask install atext
-brew cask install clipmenu
-brew cask install hocus-focus
-brew cask install rescuetime
-brew cask install dashlane
-brew cask install doxie
-brew cask install eye-fi
-brew cask install xtrafinder
-brew cask install noizio
-brew cask install disk-inventory-x
-
-# entertainment
-brew cask install vlc
-brew cask install spotify
-brew cask install transmission
-brew cask install calibre
-
-# web development
-brew cask install iterm2
-brew cask install atom
-brew cask install virtualbox
-brew cask install gitx-rowanj
-brew cask install google-chrome
-brew cask install firefox
-brew cask install ccmenu
-brew cask install dash
-brew cask install livereload
-brew cask install imageoptim
-brew cask install pgadmin3
-brew cask install github
-brew cask install paw
-brew cask install toggldesktop
-brew cask install sequel-pro
-brew cask install kitematic
-brew cask install filezilla
-brew cask install elm-platform
-# brew cask install charles
-# brew cask install xquartz
-# brew cask install wireshark
-# brew cask install sourcetree
-
-
-# communications
-brew cask install hipchat
-brew cask install skype
-brew cask install slack
-brew cask install backblaze
 
 #install personal dotfiles
 git clone https://github.com/jumichot/dotfiles.git ~/.dotfiles

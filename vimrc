@@ -28,12 +28,12 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 " Plugin 'ngmy/vim-rubocop'
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'moll/vim-node'
 " Plugin 'myhere/vim-nodejs-complete'
 Plugin 'pangloss/vim-javascript'
 " Plugin 'marijnh/tern_for_vim'
 " Plugin 'Shougo/unite.vim'
-Plugin 'kshenoy/vim-signature'
 " Plugin 'Shougo/vimproc.vim'
 " Plugin 'Shougo/vimshell.vim'
 " Plugin 'rizzatti/dash.vim'
@@ -47,13 +47,14 @@ Plugin 'junegunn/vim-pseudocl'
 Plugin 'junegunn/vim-oblique'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'mxw/vim-jsx'
-Plugin 'wavded/vim-stylus'
 Plugin 'mattn/emmet-vim'
 
 Plugin 'kana/vim-operator-user'
 Plugin 'haya14busa/vim-operator-flashy'
+Plugin 'semanticart/vim-phoenix'
 Plugin 'lambdatoast/elm.vim'
-
+Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'junegunn/vim-easy-align'
 
 
 call vundle#end()
@@ -191,6 +192,7 @@ nmap <leader>f :Ag
 nmap <leader>fu :Ag -Q "
 nmap <leader>ba :Gblame<CR>
 nmap <leader>Q :qa!<CR>
+nmap <leader>r :rt<CR>
 
 " =========== Tabs and window navigation ===========
 
@@ -326,6 +328,7 @@ vmap <Leader>c gc
 iabbrev lenght length
 iabbrev heigth height
 iabbrev widht width
+iabbrev adress address
 iabbrev fucntion function
 iabbrev funciton function
 cmap w!! w !sudo tee % >/dev/null
@@ -340,3 +343,10 @@ nmap <leader>sc :e db/schema.rb<CR>
 map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
 nnoremap <leader>wtf oputs "#" * 90<c-m>puts <c-m>puts "#" * 90<esc>
+let g:elm_format_autosave = 1
+set re=1
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)

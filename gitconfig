@@ -9,7 +9,8 @@
 [merge]
 	tool = vimdiff
 [color]
-	ui = true
+	ui = auto
+	diff = always
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
@@ -17,13 +18,32 @@
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	churn = "!f() { git log --all -M -C --name-only --format='format:' \"$@\" | sort | grep -v '^$' | uniq -c | sort | awk 'BEGIN {print \"count\tfile\"} {print $1 \"\t\" $2}' | sort -g; }; f"
 	trash = !mkdir -p .trash && git ls-files --others --exclude-standard | xargs mv -f -t .trash
+	lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
 [status]
 	showUntrackedFiles = all
 [diff]
 	wordRegex = .
+	mnemonixPrefix = true
+	renames = true
 [rerere]
 	enabled = true
 [pull]
 	rebase = true
 [github]
 	user = jumichot
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[color "diff"]
+	meta = yellow
+	frag = magenta
+	whitespace = red
+[pager]
+	diff = diff-so-fancy | less --tabs=2 -RFX
+	show = diff-so-fancy | less --tabs=2 -RFX
+[log]
+	abbrevCommit = true
+	follow = true
+[grep]
+	extendedRegexp = true
