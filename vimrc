@@ -10,52 +10,43 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-" Plugin 'kchmck/vim-coffee-script'
+Plugin 'tpope/vim-commentary'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'kana/vim-textobj-user'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'tpope/vim-commentary'
-Plugin 'thoughtbot/vim-rspec'
 Plugin 'justinj/vim-react-snippets'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-" Plugin 'ngmy/vim-rubocop'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-" Plugin 'moll/vim-node'
-" Plugin 'myhere/vim-nodejs-complete'
 Plugin 'pangloss/vim-javascript'
-" Plugin 'marijnh/tern_for_vim'
-" Plugin 'Shougo/unite.vim'
-" Plugin 'Shougo/vimproc.vim'
-" Plugin 'Shougo/vimshell.vim'
-" Plugin 'rizzatti/dash.vim'
-Plugin 'editorconfig/editorconfig-vim'
-" Plugin 'digitaltoad/vim-jade'
-" Plugin 'burnettk/vim-angular'
-" Plugin 'rstacruz/sparkup'
-" Plugin 'parkr/vim-jekyll'
-" Plugin 'fatih/vim-go'
 Plugin 'junegunn/vim-pseudocl'
 Plugin 'junegunn/vim-oblique'
 Plugin 'elixir-lang/vim-elixir'
-Plugin 'mxw/vim-jsx'
-Plugin 'mattn/emmet-vim'
+Plugin 'jparise/vim-graphql'
+" Plugin 'ngmy/vim-rubocop'
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
-Plugin 'kana/vim-operator-user'
-Plugin 'haya14busa/vim-operator-flashy'
-Plugin 'semanticart/vim-phoenix'
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+
+Plugin 'mxw/vim-jsx'
 Plugin 'lambdatoast/elm.vim'
+Plugin 'semanticart/vim-phoenix'
+
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'ap/vim-css-color'
+Plugin 'mattn/emmet-vim'
+Plugin 'mhinz/vim-startify'
+
+Plugin 'haya14busa/vim-operator-flashy'
 Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'junegunn/vim-easy-align'
-
+Plugin 'kana/vim-operator-user'
 
 call vundle#end()
 
@@ -85,10 +76,10 @@ set showmatch                   " highlight matching [{()}]
 set relativenumber
 
 " =================== Theming =======================
-
+" termguicolors
 set t_Co=256                    " 256 colors
 set background=dark
-colorscheme solarized
+" colorscheme solarized
 
 " ================ Search Settings  =================
 
@@ -163,6 +154,7 @@ set sidescroll=1
 " ===================================================
 " ==================== MINE =========================
 " ===================================================
+set colorcolumn=120
 
 " ============= Leader key and escape key ===========
 
@@ -188,7 +180,7 @@ imap <right> <nop>
 " remove search hilighting
 nmap <silent> // :nohlsearch<CR>
 nmap <leader>ru :RuboCop<CR>
-nmap <leader>f :Ag 
+nmap <leader>f :Ag
 nmap <leader>fu :Ag -Q "
 nmap <leader>ba :Gblame<CR>
 nmap <leader>Q :qa!<CR>
@@ -216,8 +208,46 @@ nnoremap td  :bd!<Space>
 " nnoremap td  :bd<CR>
 
 nmap <leader>q :q!<CR>
-nnoremap ta  :1,1000bd<CR>
+nnoremap ta  :%bd<cr>
 set splitright
+
+" fix multi paste
+xnoremap p pgvy
+" Don't use Ex mode, use Q for formatting
+map Q gq
+" No Help, please
+nmap <F1> <Esc>
+nnoremap <leader>json :%!jq .<CR>
+map <Leader>re :source ~/.vimrc<CR>
+" reindent whole file
+map <Leader>= ggVG=
+map <Leader>r :e!<CR>
+" add comma / semicolon at the end of the line
+nnoremap <leader>; m`A;<Esc>``
+nnoremap <Leader>, m`A,<Esc>``
+" Useful
+nnoremap <Leader>o o<Esc>k
+nnoremap <Leader>O O<Esc>j
+" Rails shortcut
+nmap <leader>rr :e config/routes.rb<CR>
+nmap <leader>sc :e db/schema.rb<CR>
+" get current file path
+nmap <Leader>cl :let @*=expand("%:p")<CR>
+" Best debugging snippet in ruby
+nnoremap <leader>wtf oputs "-" * 90<c-m>p <c-m>puts "-" * 90<esc>
+
+cmap w!! w !sudo tee % >/dev/null
+autocmd FileType gitcommit setlocal spell
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufRead,BufNewFile *.markdown setlocal spell
+
+" AutoCorrect typos in Insert Mode
+iabbrev lenght length
+iabbrev heigth height
+iabbrev widht width
+iabbrev adress address
+iabbrev fucntion function
+iabbrev funciton function
 
 " ===================================================
 " ================= Plugins configs =================
@@ -261,21 +291,15 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
-" fix multi paste
-xnoremap p pgvy
 " Enable built-in matchit plugin
 runtime macros/matchit.vim
 
+" ULTISNIPS
 let g:UltiSnipsExpandTrigger="<c-l>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " let g:syntastic_scss_checkers = ['scss_lint']
 
-" Don't use Ex mode, use Q for formatting
-map Q gq
-" No Help, please
-nmap <F1> <Esc>
-" nnoremap <leader>json :%!jq .<CR>
 " RSpec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
@@ -284,33 +308,12 @@ map <Leader>a :call RunAllSpecs()<CR>
 let g:rspec_runner = "os_x_iterm"
 let g:rspec_command  = "!bundle exec rspec --tag ~@js {spec}"
 " let g:rspec_command  = "!zeus rspec --tag ~@js {spec}"
-" syntax highlting for jsx on .js files
-" let g:jsx_ext_required = 0
 
-map <Leader>re :source ~/.vimrc<CR>
-map <Leader>= ggVG=
-map <Leader>r :e!<CR>
-
-" add comma / semicolon at the end of the line
-nnoremap <leader>; m`A;<Esc>``
-nnoremap <Leader>, m`A,<Esc>``
-
-set colorcolumn=120
-autocmd FileType gitcommit setlocal spell
-autocmd BufRead,BufNewFile *.md setlocal spell
-autocmd BufRead,BufNewFile *.markdown setlocal spell
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
 " nnoremap <leader>gv `[v`] " highlight last inserted text
 
-au FileType go inoremap jk <esc>:GoImports<cr>:w<cr>
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-
 map <Leader>p :CtrlPBuffer<cr>
-nmap <Leader>cl :let @*=expand("%:p")<CR>
 
 let g:oblique#incsearch_highlight_all=1
 " ========================== Search ==================
@@ -318,35 +321,30 @@ set grepprg=ag\ --nogroup\ --nocolor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " ========================= Misc ===================
-" Useful
-nnoremap <Leader>o o<Esc>k
-nnoremap <Leader>O O<Esc>j
 " Comment
 nmap <Leader>c gcc
 vmap <Leader>c gc
-" AutoCorrect typos in Insert Mode
-iabbrev lenght length
-iabbrev heigth height
-iabbrev widht width
-iabbrev adress address
-iabbrev fucntion function
-iabbrev funciton function
-cmap w!! w !sudo tee % >/dev/null
 let g:syntastic_javascript_checkers = ['eslint']
 set timeout           " for mappings
 set timeoutlen=1000   " default value
 set ttimeout          " for key codes
 set ttimeoutlen=10    " unnoticeable small value
-nmap <leader>rr :e config/routes.rb<CR>
-nmap <leader>sc :e db/schema.rb<CR>
 " set shellcmdflag=-ic
 map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
-nnoremap <leader>wtf oputs "#" * 90<c-m>puts <c-m>puts "#" * 90<esc>
 let g:elm_format_autosave = 1
 set re=1
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
 
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+xmap ga <Plug>(EasyAlign) " Start interactive EasyAlign in visual mode (e.g. vipga)
+nmap ga <Plug>(EasyAlign) " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+" vnoremap J :m '>+1<CR>gv=gv
+" vnoremap K :m '<-2<CR>gv=gv
+
+hi htmlArg gui=italic
+hi Comment gui=italic
+hi Type    gui=italic
+hi htmlArg cterm=italic
+hi Comment cterm=italic
+hi Type    cterm=italic
+set t_ut=
+let g:airline_highlighting_cache=1 " better for ruby files

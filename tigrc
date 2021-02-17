@@ -2,21 +2,16 @@
 
 set main-view = id date:relative author:abbreviated commit-title:graph=yes,refs=yes
 
-set refresh-mode        = auto   # Enum: manual, auto, after-command, periodic
+set refresh-mode        = manual   # Enum: manual, auto, after-command, periodic
 # set refresh-interval    = 1          # Interval in seconds between refreshes
 
-# Delete files in status view (useful for untracked files)
-bind status D !rm -vf %(file)
-
-# Amend last commit with A
-bind status A !git commit --amend
-
-# Git push
-bind status P !git push
+bind status D !rm -vf %(file) # Delete files in status view (useful for untracked files)
+bind status A !git commit --amend # Amend last commit with A
+bind status P !git push # Git push
 
 # Create and checkout a new branch; specify custom prompt
 bind main B !git checkout -b "%(prompt Enter new branch name: )"
 bind main Y !@sh -c "echo %(commit) | pbcopy"
 
 # Display history for specific file in log view
-bind log F !tig --follow --all -p "%(prompt Enter file name: )"
+# bind log F !tig --follow --all -p "%(prompt Enter file name: )"
